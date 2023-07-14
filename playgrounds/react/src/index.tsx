@@ -1,12 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import {Color} from "@ds.e/react";
+import {Color,Text} from "@ds.e/react";
 import "@ds.e/scss/lib/Utilities.css";
+import "@ds.e/scss/lib/Text.css";
 
 ReactDOM.render(
+    <>
     <Color
-    hexCode="#ff0000"
-    />,
+    hexCode="#00FF00"
+    />
+    <Text
+    size="xl"
+    >asDSAD</Text>
+    </>,
     document.getElementById("root")
 )

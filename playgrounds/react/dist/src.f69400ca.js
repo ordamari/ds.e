@@ -28863,7 +28863,23 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/@ds.e/react/lib/foundation/Spacing.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../../../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../node_modules/@ds.e/foundation/lib/FontSize.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+const fontSizes = {
+  xs: 'xs',
+  sm: 'sm',
+  base: 'base',
+  lg: 'lg',
+  xl: 'xl'
+};
+var _default = Object.freeze(fontSizes);
+exports.default = _default;
+},{}],"../../../node_modules/@ds.e/foundation/lib/Spacing.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28881,9 +28897,30 @@ const spaces = {
   xxl: 'xxl',
   xxxl: 'xxxl'
 };
-var Spacing = Object.freeze(spaces);
-exports.default = Spacing;
-},{}],"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js":[function(require,module,exports) {
+var _default = Object.freeze(spaces);
+exports.default = _default;
+},{}],"../../../node_modules/@ds.e/foundation/lib/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "FontSize", {
+  enumerable: true,
+  get: function () {
+    return _FontSize.default;
+  }
+});
+Object.defineProperty(exports, "Spacing", {
+  enumerable: true,
+  get: function () {
+    return _Spacing.default;
+  }
+});
+var _FontSize = _interopRequireDefault(require("./FontSize"));
+var _Spacing = _interopRequireDefault(require("./Spacing"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./FontSize":"../../../node_modules/@ds.e/foundation/lib/FontSize.js","./Spacing":"../../../node_modules/@ds.e/foundation/lib/Spacing.js"}],"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28891,12 +28928,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Spacing = _interopRequireDefault(require("../../foundation/Spacing.js"));
+var _foundation = require("@ds.e/foundation");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const Color = ({
   hexCode,
-  height = _Spacing.default.sm,
-  width = _Spacing.default.sm
+  height = _foundation.Spacing.sm,
+  width = _foundation.Spacing.sm
 }) => {
   const className = `dse-width-${width} dse-height-${height}`;
   const style = {
@@ -28908,7 +28945,27 @@ const Color = ({
   });
 };
 exports.default = Color;
-},{"react":"../../../node_modules/react/index.js","../../foundation/Spacing.js":"../../../node_modules/@ds.e/react/lib/foundation/Spacing.js"}],"../../../node_modules/@ds.e/react/lib/index.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","@ds.e/foundation":"../../../node_modules/@ds.e/foundation/lib/index.js"}],"../../../node_modules/@ds.e/react/lib/atoms/Text/Text.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _foundation = require("@ds.e/foundation");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const Text = ({
+  children,
+  size = _foundation.FontSize.base
+}) => {
+  const className = `dse-text-${size}`;
+  return _react.default.createElement("p", {
+    className: className
+  }, children);
+};
+exports.default = Text;
+},{"react":"../../../node_modules/react/index.js","@ds.e/foundation":"../../../node_modules/@ds.e/foundation/lib/index.js"}],"../../../node_modules/@ds.e/react/lib/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28920,16 +28977,16 @@ Object.defineProperty(exports, "Color", {
     return _Color.default;
   }
 });
-Object.defineProperty(exports, "Spacing", {
+Object.defineProperty(exports, "Text", {
   enumerable: true,
   get: function () {
-    return _Spacing.default;
+    return _Text.default;
   }
 });
 var _Color = _interopRequireDefault(require("./atoms/Color/Color.js"));
-var _Spacing = _interopRequireDefault(require("./foundation/Spacing.js"));
+var _Text = _interopRequireDefault(require("./atoms/Text/Text.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./atoms/Color/Color.js":"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js","./foundation/Spacing.js":"../../../node_modules/@ds.e/react/lib/foundation/Spacing.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./atoms/Color/Color.js":"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js","./atoms/Text/Text.js":"../../../node_modules/@ds.e/react/lib/atoms/Text/Text.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -28986,6 +29043,12 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
+},{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../node_modules/@ds.e/scss/lib/Text.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
 },{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
@@ -28993,11 +29056,14 @@ var _react = _interopRequireDefault(require("react"));
 var _reactDom = _interopRequireDefault(require("react-dom"));
 var _react2 = require("@ds.e/react");
 require("@ds.e/scss/lib/Utilities.css");
+require("@ds.e/scss/lib/Text.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-_reactDom.default.render(_react.default.createElement(_react2.Color, {
-  hexCode: "#ff0000"
-}), document.getElementById("root"));
-},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@ds.e/react":"../../../node_modules/@ds.e/react/lib/index.js","@ds.e/scss/lib/Utilities.css":"../../../node_modules/@ds.e/scss/lib/Utilities.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+_reactDom.default.render(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_react2.Color, {
+  hexCode: "#00FF00"
+}), _react.default.createElement(_react2.Text, {
+  size: "xl"
+}, "asDSAD")), document.getElementById("root"));
+},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@ds.e/react":"../../../node_modules/@ds.e/react/lib/index.js","@ds.e/scss/lib/Utilities.css":"../../../node_modules/@ds.e/scss/lib/Utilities.css","@ds.e/scss/lib/Text.css":"../../../node_modules/@ds.e/scss/lib/Text.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29022,7 +29088,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63379" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50663" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
