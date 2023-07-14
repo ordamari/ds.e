@@ -28887,6 +28887,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 const spaces = {
+  none: 'none',
   xxxs: 'xxxs',
   xxs: 'xxs',
   xs: 'xs',
@@ -28959,12 +28960,42 @@ const Text = ({
   children,
   size = _foundation.FontSize.base
 }) => {
-  const className = `dse-text-${size}`;
+  const className = `dse-text dse-text-${size}`;
   return _react.default.createElement("p", {
     className: className
   }, children);
 };
 exports.default = Text;
+},{"react":"../../../node_modules/react/index.js","@ds.e/foundation":"../../../node_modules/@ds.e/foundation/lib/index.js"}],"../../../node_modules/@ds.e/react/lib/atoms/Margin/Margin.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _foundation = require("@ds.e/foundation");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const Margin = ({
+  children,
+  space = _foundation.Spacing.xxxs,
+  start = false,
+  end = false,
+  top = false,
+  bottom = false
+}) => {
+  let className = '';
+  if (!start && !end && !top && !bottom) className = `dse-margin-${space}`;else {
+    if (start) className += ` dse-margin-inline-start-${space}`;
+    if (end) className += ` dse-margin-inline-end-${space}`;
+    if (top) className += ` dse-margin-block-start-${space}`;
+    if (bottom) className += ` dse-margin-block-end-${space}`;
+  }
+  return _react.default.createElement("div", {
+    className: className
+  }, children);
+};
+exports.default = Margin;
 },{"react":"../../../node_modules/react/index.js","@ds.e/foundation":"../../../node_modules/@ds.e/foundation/lib/index.js"}],"../../../node_modules/@ds.e/react/lib/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -28977,6 +29008,12 @@ Object.defineProperty(exports, "Color", {
     return _Color.default;
   }
 });
+Object.defineProperty(exports, "Margin", {
+  enumerable: true,
+  get: function () {
+    return _Margin.default;
+  }
+});
 Object.defineProperty(exports, "Text", {
   enumerable: true,
   get: function () {
@@ -28985,8 +29022,9 @@ Object.defineProperty(exports, "Text", {
 });
 var _Color = _interopRequireDefault(require("./atoms/Color/Color.js"));
 var _Text = _interopRequireDefault(require("./atoms/Text/Text.js"));
+var _Margin = _interopRequireDefault(require("./atoms/Margin/Margin.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./atoms/Color/Color.js":"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js","./atoms/Text/Text.js":"../../../node_modules/@ds.e/react/lib/atoms/Text/Text.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./atoms/Color/Color.js":"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js","./atoms/Text/Text.js":"../../../node_modules/@ds.e/react/lib/atoms/Text/Text.js","./atoms/Margin/Margin.js":"../../../node_modules/@ds.e/react/lib/atoms/Margin/Margin.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -29049,6 +29087,12 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
+},{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../node_modules/@ds.e/scss/lib/Margin.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
 },{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
@@ -29057,13 +29101,17 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 var _react2 = require("@ds.e/react");
 require("@ds.e/scss/lib/Utilities.css");
 require("@ds.e/scss/lib/Text.css");
+require("@ds.e/scss/lib/Margin.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-_reactDom.default.render(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_react2.Color, {
+_reactDom.default.render(_react.default.createElement(_react2.Margin, {
+  start: true,
+  top: true
+}, _react.default.createElement(_react2.Color, {
   hexCode: "#00FF00"
 }), _react.default.createElement(_react2.Text, {
   size: "xl"
 }, "asDSAD")), document.getElementById("root"));
-},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@ds.e/react":"../../../node_modules/@ds.e/react/lib/index.js","@ds.e/scss/lib/Utilities.css":"../../../node_modules/@ds.e/scss/lib/Utilities.css","@ds.e/scss/lib/Text.css":"../../../node_modules/@ds.e/scss/lib/Text.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@ds.e/react":"../../../node_modules/@ds.e/react/lib/index.js","@ds.e/scss/lib/Utilities.css":"../../../node_modules/@ds.e/scss/lib/Utilities.css","@ds.e/scss/lib/Text.css":"../../../node_modules/@ds.e/scss/lib/Text.css","@ds.e/scss/lib/Margin.css":"../../../node_modules/@ds.e/scss/lib/Margin.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29088,7 +29136,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50663" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51392" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

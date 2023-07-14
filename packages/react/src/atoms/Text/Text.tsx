@@ -10,7 +10,7 @@ const Text: React.FC<TextProps> = ({
     children,
     size = FontSize.base as keyof typeof FontSize,
 }: TextProps) => {
-    const className = `dse-text-${size}`;
+    const className = `dse-text dse-text-${size}`;
     return (
         <p
         className={className}
