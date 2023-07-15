@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "yarn lerna run build",
-    "dev": "yarn lerna run dev"
+    "dev": "yarn lerna run dev",
+    "test": "yarn lerna run test"
   },
   "keywords": [],
   "author": "",
@@ -14,13 +15,13 @@
     "lerna": "^7.1.3"
   },
   "private": true,
-  "workspaces":{
-    "packages":[
-        "packages/*",
-        "playgrounds/*"
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "playgrounds/*"
     ],
-    "nohoist":[
-        "**/normalize-scss"
+    "nohoist": [
+      "**/normalize-scss"
     ]
   }
 }

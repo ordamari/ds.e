@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot of the base state 1`] = `
+<DocumentFragment>
+  <div
+    class="dse-select"
+  >
+    <button
+      aria-controls="dse-select-list"
+      aria-haspopup="true"
+      class="dse-select__label"
+      data-testid="DseSelectButton"
+    >
+      <p
+        class="dse-text dse-text-base"
+      >
+        Please select an option...
+      </p>
+      <svg
+        aria-hidden="true"
+        class="dse-select__caret ds-select__caret--closed"
+        fill="none"
+        height="1rem"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot of the options menu open state 1`] = `
+<DocumentFragment>
+  <div
+    class="dse-select"
+  >
+    <button
+      aria-controls="dse-select-list"
+      aria-expanded="true"
+      aria-haspopup="true"
+      class="dse-select__label"
+      data-testid="DseSelectButton"
+    >
+      <p
+        class="dse-text dse-text-base"
+      >
+        Please select an option...
+      </p>
+      <svg
+        aria-hidden="true"
+        class="dse-select__caret dse-select__caret--open"
+        fill="none"
+        height="1rem"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <ul
+      class="dse-select__overlay"
+      id="dse-select-list"
+      role="menu"
+    >
+      <li
+        area-label="Option 1"
+        class="dse-select__option  dse-select__option--highlighted"
+        role="menuitemradio"
+        tabindex="-1"
+      >
+        <button>
+          <p
+            class="dse-text dse-text-base"
+          >
+            Option 1
+          </p>
+        </button>
+      </li>
+      <li
+        area-label="Option 2"
+        class="dse-select__option  "
+        role="menuitemradio"
+        tabindex="0"
+      >
+        <button>
+          <p
+            class="dse-text dse-text-base"
+          >
+            Option 2
+          </p>
+        </button>
+      </li>
+      <li
+        area-label="Option 3"
+        class="dse-select__option  "
+        role="menuitemradio"
+        tabindex="0"
+      >
+        <button>
+          <p
+            class="dse-text dse-text-base"
+          >
+            Option 3
+          </p>
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot of the selected option state 1`] = `
+<DocumentFragment>
+  <div
+    class="dse-select"
+  >
+    <button
+      aria-controls="dse-select-list"
+      aria-haspopup="true"
+      class="dse-select__label"
+      data-testid="DseSelectButton"
+    >
+      <p
+        class="dse-text dse-text-base"
+      >
+        Option 1
+      </p>
+      <svg
+        aria-hidden="true"
+        class="dse-select__caret ds-select__caret--closed"
+        fill="none"
+        height="1rem"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;

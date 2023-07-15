@@ -141,6 +141,7 @@ const Select = <T extends unknown>({
         aria-haspopup={true}
         aria-expanded={isOpen ? true : undefined}
         aria-controls="dse-select-list"
+        data-testid="DseSelectButton"
         className="dse-select__label"
         onClick={onLabelClick}
         onKeyDown={onLabelKeyDown}
