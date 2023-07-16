@@ -202,27 +202,25 @@ const Select = <T extends unknown>({
             if (renderOption) return renderOption(renderOptionProps);
             return (
               <li {...renderOptionProps.getOptionRecommendedProps()}>
-                <button onClick={onClick}>
-                  <Text>{option.label}</Text>
-                  {isSelected ? (
-                    <svg
-                      fill="none"
-                      width="1rem"
-                      height="1rem"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  ) : null}
-                </button>
+                <Text>{option.label}</Text>
+                {isSelected ? (
+                  <svg
+                    fill="none"
+                    width="1rem"
+                    height="1rem"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                ) : null}
               </li>
             );
           })}

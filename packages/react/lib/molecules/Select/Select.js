@@ -140,10 +140,9 @@ const Select = ({ options = [], label: defaultLabel = 'Please select an option..
             if (renderOption)
                 return renderOption(renderOptionProps);
             return (React.createElement("li", { ...renderOptionProps.getOptionRecommendedProps() },
-                React.createElement("button", { onClick: onClick },
-                    React.createElement(Text, null, option.label),
-                    isSelected ? (React.createElement("svg", { fill: "none", width: "1rem", height: "1rem", stroke: "currentColor", strokeWidth: "1.5", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", "aria-hidden": "true" },
-                        React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 12.75l6 6 9-13.5" }))) : null)));
+                React.createElement(Text, null, option.label),
+                isSelected ? (React.createElement("svg", { fill: "none", width: "1rem", height: "1rem", stroke: "currentColor", strokeWidth: "1.5", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", "aria-hidden": "true" },
+                    React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 12.75l6 6 9-13.5" }))) : null));
         }))) : null));
 };
 
