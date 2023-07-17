@@ -1,5 +1,5 @@
 import React from 'react';
-import '@ds.e/scss/lib/Utilities.css';
+import '@or.ds.e/scss/lib/Utilities.css';
 declare const _default: {
     title: string;
 };

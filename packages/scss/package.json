@@ -1,5 +1,5 @@
 {
-  "name": "@ds.e/scss",
+  "name": "@or.ds.e/scss",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -39,5 +39,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "226830b43cb46c199f0ca65430bcff1082467934"
 }

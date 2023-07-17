@@ -1,8 +1,8 @@
 import React from 'react';
 import Text from './Text';
-import { FontSize } from '@ds.e/foundation';
+import { FontSize } from '@or.ds.e/foundation';
 import { select } from '@storybook/addon-knobs';
-import '@ds.e/scss/lib/Text.css';
+import '@or.ds.e/scss/lib/Text.css';
 
 export default {
   title: 'Atoms/Text',

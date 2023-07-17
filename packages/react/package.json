@@ -1,5 +1,5 @@
 {
-  "name": "@ds.e/react",
+  "name": "@or.ds.e/react",
   "version": "0.1.0",
   "type": "module",
   "main": "lib/index.js",
@@ -48,5 +48,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "226830b43cb46c199f0ca65430bcff1082467934"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@ds.e/core",
+  "name": "@or.ds.e/core",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lerna": "^7.1.3"
   },
-  "private": true,
   "workspaces": {
     "packages": [
       "packages/*",

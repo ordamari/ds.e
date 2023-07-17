@@ -1,5 +1,5 @@
-import React from "react";
-import '@ds.e/scss/lib/Select.css';
+import React from 'react';
+import '@or.ds.e/scss/lib/Select.css';
 declare const _default: {
     title: string;
 };

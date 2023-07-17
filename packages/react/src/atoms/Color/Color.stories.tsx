@@ -1,8 +1,8 @@
 import React from 'react';
 import Color from './Color';
 import { text, select } from '@storybook/addon-knobs';
-import '@ds.e/scss/lib/Utilities.css';
-import { Spacing } from '@ds.e/foundation';
+import '@or.ds.e/scss/lib/Utilities.css';
+import { Spacing } from '@or.ds.e/foundation';
 
 export default {
   title: 'Atoms/Color',
