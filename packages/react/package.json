@@ -1,13 +1,12 @@
 {
   "name": "@or.ds.e/react",
   "version": "0.2.0",
-  "type": "module",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "dev": "yarn build --watch",
-    "test": "jest --verbose",
+    "test": "jest --verbose ",
     "test:watch": "yarn test --watch",
     "start:storybook": "storybook dev",
     "build:storybook": "storybook build",
