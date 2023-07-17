@@ -42,6 +42,11 @@
   width: 100%;
   box-shadow: 0 4px 11px rgba(157, 157, 157, 0.21);
   list-style-type: none;
+  display: none;
+}
+
+.dse-select__overlay--open {
+  display: block;
 }
 
 .dse-select__option {

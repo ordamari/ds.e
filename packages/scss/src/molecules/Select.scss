@@ -27,6 +27,11 @@
         width: 100%;
         box-shadow: map-get($shadows, 'base');
         list-style-type: none;
+        display: none;
+
+        &--open {
+            display: block;
+        }
     }
 
     &__option {

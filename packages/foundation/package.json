@@ -13,5 +13,8 @@
     "build": "tsc",
     "dev": "tsc -w",
     "test": "jest --verbose"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

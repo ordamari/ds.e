@@ -108,7 +108,7 @@ const Select = ({ options = [], label: defaultLabel = 'Please select an option..
             React.createElement(Text, null, label),
             React.createElement("svg", { fill: "none", className: `dse-select__caret ${caretClassName}`, stroke: "currentColor", strokeWidth: "1.5", width: "1rem", height: "1rem", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", "aria-hidden": "true" },
                 React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 8.25l-7.5 7.5-7.5-7.5" }))),
-        isOpen ? (React.createElement("ul", { role: "menu", id: "dse-select-list", className: "dse-select__overlay" }, options.map((option, index) => {
+        React.createElement("ul", { role: "menu", id: "dse-select-list", className: `dse-select__overlay ${isOpen ? 'dse-select__overlay--open' : ''}` }, options.map((option, index) => {
             const isSelected = selectedOptionIndex === index;
             const isHighLighted = highLightOptionIndex === index;
             const className = `dse-select__option ${isSelected ? 'dse-select__option--selected' : ''} ${isHighLighted ? 'dse-select__option--highlighted' : ''}`;
@@ -143,7 +143,7 @@ const Select = ({ options = [], label: defaultLabel = 'Please select an option..
                 React.createElement(Text, null, option.label),
                 isSelected ? (React.createElement("svg", { fill: "none", width: "1rem", height: "1rem", stroke: "currentColor", strokeWidth: "1.5", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", "aria-hidden": "true" },
                     React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M4.5 12.75l6 6 9-13.5" }))) : null));
-        }))) : null));
+        }))));
 };
 
 export { Select as default };

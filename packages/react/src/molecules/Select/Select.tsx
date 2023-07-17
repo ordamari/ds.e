@@ -165,67 +165,71 @@ const Select = <T extends unknown>({
           />
         </svg>
       </button>
-      {isOpen ? (
-        <ul role="menu" id="dse-select-list" className="dse-select__overlay">
-          {options.map((option, index) => {
-            const isSelected = selectedOptionIndex === index;
-            const isHighLighted = highLightOptionIndex === index;
-            const className = `dse-select__option ${
-              isSelected ? 'dse-select__option--selected' : ''
-            } ${isHighLighted ? 'dse-select__option--highlighted' : ''}`;
-            const key = option.label + index;
-            const ref = optionsRefs[index];
-            const onClick = () => onOptionSelect(option, index);
-            const renderOptionProps = {
-              isSelected,
-              option,
-              getOptionRecommendedProps: (overrideProps = {}) => {
-                {
-                  return {
-                    className,
-                    onClick,
-                    key,
-                    ref,
-                    tabIndex: isHighLighted ? -1 : 0,
-                    'area-checked': isSelected ? true : undefined,
-                    'area-label': option.label,
-                    role: 'menuitemradio',
-                    onKeyDown: onOptionKeyDown,
-                    onMouseEnter: highLightOption.bind(null, index),
-                    onMouseLeave: highLightOption.bind(null, null),
-                    ...overrideProps,
-                  };
-                }
-              },
-            } as RenderOptionProps<T>;
+      <ul
+        role="menu"
+        id="dse-select-list"
+        className={`dse-select__overlay ${
+          isOpen ? 'dse-select__overlay--open' : ''
+        }`}
+      >
+        {options.map((option, index) => {
+          const isSelected = selectedOptionIndex === index;
+          const isHighLighted = highLightOptionIndex === index;
+          const className = `dse-select__option ${
+            isSelected ? 'dse-select__option--selected' : ''
+          } ${isHighLighted ? 'dse-select__option--highlighted' : ''}`;
+          const key = option.label + index;
+          const ref = optionsRefs[index];
+          const onClick = () => onOptionSelect(option, index);
+          const renderOptionProps = {
+            isSelected,
+            option,
+            getOptionRecommendedProps: (overrideProps = {}) => {
+              {
+                return {
+                  className,
+                  onClick,
+                  key,
+                  ref,
+                  tabIndex: isHighLighted ? -1 : 0,
+                  'area-checked': isSelected ? true : undefined,
+                  'area-label': option.label,
+                  role: 'menuitemradio',
+                  onKeyDown: onOptionKeyDown,
+                  onMouseEnter: highLightOption.bind(null, index),
+                  onMouseLeave: highLightOption.bind(null, null),
+                  ...overrideProps,
+                };
+              }
+            },
+          } as RenderOptionProps<T>;
 
-            if (renderOption) return renderOption(renderOptionProps);
-            return (
-              <li {...renderOptionProps.getOptionRecommendedProps()}>
-                <Text>{option.label}</Text>
-                {isSelected ? (
-                  <svg
-                    fill="none"
-                    width="1rem"
-                    height="1rem"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    />
-                  </svg>
-                ) : null}
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
+          if (renderOption) return renderOption(renderOptionProps);
+          return (
+            <li {...renderOptionProps.getOptionRecommendedProps()}>
+              <Text>{option.label}</Text>
+              {isSelected ? (
+                <svg
+                  fill="none"
+                  width="1rem"
+                  height="1rem"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"
+                  />
+                </svg>
+              ) : null}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
