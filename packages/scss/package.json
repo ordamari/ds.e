@@ -40,5 +40,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "gitHead": "226830b43cb46c199f0ca65430bcff1082467934"
 }
