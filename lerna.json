@@ -1,8 +1,8 @@
 {
-    "packages":[
-        "packages/*"
-    ],
-    "version": "0.0.0",
-    "npmClient": "yarn",
-    "stream": true
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.1.0",
+  "npmClient": "yarn",
+  "stream": true
 }
