@@ -1,8 +1,9 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "version": "0.2.1",
   "npmClient": "yarn",
-  "stream": true
+  "stream": true,
+  "command": {
+    "conventionalCommits": true
+  }
 }
