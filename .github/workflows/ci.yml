@@ -19,7 +19,7 @@ jobs:
       - name: Build foundation package
         run: cd packages/foundation && yarn build && cd ../..
       - name: Build scss package
-        run: cd packages/scss && mkdir lib && yarn build && cd ../..
+        run: cd packages/scss && mkdir lib && cd ../..
       - name: Build packages
         run: yarn build
       - name: Automated tests
