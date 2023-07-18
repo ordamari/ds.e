@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "yarn lerna run build",
     "dev": "yarn lerna run dev",
     "test": "yarn lerna run test",
-    "publish": "yarn test && yarn build && yarn lerna publish"
+    "publish": "yarn test && yarn build && yarn lerna publish",
+    "commit": "yarn git-cz"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +25,14 @@
     "nohoist": [
       "**/normalize-scss"
     ]
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
