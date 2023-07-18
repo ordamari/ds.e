@@ -16,6 +16,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn
+      - name: Build foundation package
+        run: cd packages/foundation && yarn build && cd ../..
       - name: Build packages
         run: yarn build
       - name: Automated tests
