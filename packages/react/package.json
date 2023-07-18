@@ -12,7 +12,7 @@
     "build:storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_6189932630e9feb"
+    "test:chromatic": "chromatic --project-token=\"$CHROMATIC_PROJECT_TOKEN\""
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
