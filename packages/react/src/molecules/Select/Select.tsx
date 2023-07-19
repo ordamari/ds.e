@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import Text from '../../atoms/Text/Text';
+import Icon from '../../atoms/Icon/Icon';
 
 interface SelectOption<T> {
   label: string;
@@ -147,23 +148,11 @@ const Select = <T extends unknown>({
         onKeyDown={onLabelKeyDown}
       >
         <Text>{label}</Text>
-        <svg
-          fill="none"
+        <Icon
+          icon="caret"
+          size="sm"
           className={`dse-select__caret ${caretClassName}`}
-          stroke="currentColor"
-          strokeWidth="1.5"
-          width="1rem"
-          height="1rem"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
+        />
       </button>
       <ul
         role="menu"
@@ -208,24 +197,7 @@ const Select = <T extends unknown>({
           return (
             <li {...renderOptionProps.getOptionRecommendedProps()}>
               <Text>{option.label}</Text>
-              {isSelected ? (
-                <svg
-                  fill="none"
-                  width="1rem"
-                  height="1rem"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"
-                  />
-                </svg>
-              ) : null}
+              {isSelected ? <Icon icon="check" size="sm" /> : null}
             </li>
           );
         })}

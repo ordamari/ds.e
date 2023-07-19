@@ -10,7 +10,6 @@
     "test:watch": "yarn test --watch",
     "start:storybook": "storybook dev",
     "build:storybook": "storybook build",
-    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test:chromatic": "chromatic --project-token=\"$CHROMATIC_PROJECT_TOKEN\""
   },
@@ -18,8 +17,8 @@
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
-    "@storybook/addon-a11y": "^7.0.27",
     "@or.ds.e/foundation": "0.2.1",
+    "@storybook/addon-a11y": "^7.0.27",
     "@storybook/addon-essentials": "7.0.27",
     "@storybook/addon-interactions": "7.0.27",
     "@storybook/addon-knobs": "^7.0.2",
