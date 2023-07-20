@@ -1,0 +1,28 @@
+@import "foundation/index";
+
+.dse-paginator {
+    display: flex;
+    align-items: center;
+    gap: map-get($spacing, 'xxs');
+
+    &__spacer {
+        font-size: map-get($fs, 'xl');
+        color: $white-dark;
+        cursor: default;
+    }
+
+    &__button {
+        background-color: $btn-primary-bg;
+        border: none;
+        color: $btn-primary-color;
+        font-size: map-get($fs, 'lg');
+        width: map-get($spacing, 'xl');
+        height: map-get($spacing, 'xl');
+        border-radius: 50%;
+        cursor: pointer;
+
+        &--selected {
+            background-color: $btn-primary-bg-hover;
+        }
+    }
+}

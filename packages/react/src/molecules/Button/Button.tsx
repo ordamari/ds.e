@@ -20,7 +20,7 @@ const Button = ({
   const className = `${customClassName} dse-button dse-button--${variant}`;
   return (
     <button className={className} {...props}>
-      {icon ? <Icon icon={icon} /> : null}
+      {icon ? <Icon className="dse-button__icon" icon={icon} /> : null}
       <Text size={size}>{children}</Text>
     </button>
   );

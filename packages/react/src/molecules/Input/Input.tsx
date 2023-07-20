@@ -34,7 +34,7 @@ const Input = ({
       onClick={onContainerClick}
       className={containerClassName}
     >
-      {icon && <Icon icon={icon} />}
+      {icon && <Icon className="dse-input-container__icon" icon={icon} />}
       <input data-testid="DseInput" {...props} />
     </div>
   );
