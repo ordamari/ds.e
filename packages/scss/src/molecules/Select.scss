@@ -5,6 +5,11 @@
     flex-direction: column;
     position: relative;
 
+    &:focus-within {
+        box-shadow: map-get($shadows, 'base');
+    }
+
+
     &__label {
         display: flex;
         justify-content: space-between;
@@ -14,10 +19,14 @@
         background-color: $form-bg-color;
         font-family: $body-font-family;
         cursor: pointer;
+        border-radius: map-get($border-radius, "base");
+        font-size: $body-font-size;
+
     }
 
     &__overlay {
         top: calc(100% + 10px);
+        border-radius: map-get($border-radius, "base");
         position: absolute;
         @include padding('none');
         @include margin('none');

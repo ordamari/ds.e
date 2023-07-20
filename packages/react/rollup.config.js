@@ -1,5 +1,4 @@
 import Ts from 'rollup-plugin-typescript2';
-import svgr from '@svgr/rollup';
 
 export default {
   input: [
@@ -15,6 +14,6 @@ export default {
     sourcemap: true,
     preserveModules: true,
   },
-  plugins: [Ts(), svgr({ babel: false })],
+  plugins: [Ts()],
   external: ['react', 'react-dom', '@or.ds.e/foundation'],
 };

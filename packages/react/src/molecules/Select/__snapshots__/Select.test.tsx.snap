@@ -18,13 +18,12 @@ exports[`snapshot of the base state 1`] = `
       </p>
       <svg
         aria-hidden="true"
-        class="dse-select__caret ds-select__caret--closed"
+        class="dse-select__caret ds-select__caret--closed dse-width-sm dse-height-sm"
+        data-testid="DseIcon"
         fill="none"
-        height="1rem"
         stroke="currentColor"
         stroke-width="1.5"
         viewBox="0 0 24 24"
-        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -99,13 +98,12 @@ exports[`snapshot of the options menu open state 1`] = `
       </p>
       <svg
         aria-hidden="true"
-        class="dse-select__caret dse-select__caret--open"
+        class="dse-select__caret dse-select__caret--open dse-width-sm dse-height-sm"
+        data-testid="DseIcon"
         fill="none"
-        height="1rem"
         stroke="currentColor"
         stroke-width="1.5"
         viewBox="0 0 24 24"
-        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -179,13 +177,12 @@ exports[`snapshot of the selected option state 1`] = `
       </p>
       <svg
         aria-hidden="true"
-        class="dse-select__caret ds-select__caret--closed"
+        class="dse-select__caret ds-select__caret--closed dse-width-sm dse-height-sm"
+        data-testid="DseIcon"
         fill="none"
-        height="1rem"
         stroke="currentColor"
         stroke-width="1.5"
         viewBox="0 0 24 24"
-        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -213,12 +210,12 @@ exports[`snapshot of the selected option state 1`] = `
         </p>
         <svg
           aria-hidden="true"
+          class=" dse-width-sm dse-height-sm"
+          data-testid="DseIcon"
           fill="none"
-          height="1rem"
           stroke="currentColor"
           stroke-width="1.5"
           viewBox="0 0 24 24"
-          width="1rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

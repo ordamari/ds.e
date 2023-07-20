@@ -1,0 +1,65 @@
+@import "foundation/index";
+
+
+.dse-button {
+    cursor: pointer;
+    border: none;
+    padding-inline: map-get($spacing, "xs");
+    padding-block: map-get($spacing, "xs");
+    background-color: $btn-primary-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: map-get($spacing, "xxs");
+    border-radius: map-get($border-radius, "base");
+    font-family: $body-font-family;
+
+    &:focus {
+        outline: none;
+        box-shadow: map-get($shadows, 'base');
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &--primary {
+        background-color: $btn-primary-bg;
+        color: $btn-primary-color;
+
+        &:hover,
+        &:disabled {
+            background-color: $btn-primary-bg-hover;
+        }
+    }
+
+    &--info {
+        background-color: $btn-info-bg;
+        color: $btn-primary-color;
+
+        &:hover,
+        &:disabled {
+            background-color: $btn-info-bg-hover;
+        }
+    }
+
+    &--danger {
+        background-color: $btn-danger-bg;
+        color: $btn-primary-color;
+
+        &:hover,
+        &:disabled {
+            background-color: $btn-danger-bg-hover;
+        }
+    }
+
+    &--secondary {
+        background-color: $btn-secondary-bg;
+        color: $btn-secondary-color;
+
+        &:hover,
+        &:disabled {
+            opacity: 0.7;
+        }
+    }
+}

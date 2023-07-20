@@ -30,5 +30,5 @@ export const RenderOption = () => (
 );
 
 export const CostumeLabel = () => (
-  <Select options={options} label="Select an option" />
+  <Select options={options} label="Costume label" />
 );

@@ -58,6 +58,14 @@ test('the button label changes to the selected option label', () => {
   expect(getByTestId('DseSelectButton')).toHaveTextContent(options[0].label);
 });
 
+test('can customize select label', () => {
+  const { getByText } = render(
+    <Select options={options} label="THIS IS A CUSTOM LABEL" />,
+  );
+
+  expect(getByText(/THIS IS A CUSTOM LABEL/)).toBeInTheDocument();
+});
+
 test('snapshot of the selected option state', () => {
   const { getAllByRole, getByTestId, asFragment } = render(
     <Select options={options} />,
@@ -82,12 +90,4 @@ test('snapshot of the options menu open state', () => {
   fireEvent.click(getByTestId('DseSelectButton'));
 
   expect(asFragment()).toMatchSnapshot();
-});
-
-test('can customize select label', () => {
-  const { getByText } = render(
-    <Select options={options} label="THIS IS A CUSTOM LABEL" />,
-  );
-
-  expect(getByText(/THIS IS A CUSTOM LABEL/)).toBeInTheDocument();
 });

@@ -20,8 +20,12 @@ $blue: #0468db;
 $blue-light: #b4d2f4;
 
 /* Font families */
-$playfair: "Playfair Display", serif;
-$raleway: "Raleway", "HelveticaNeue", "Helvetica", sans-serif;
+$playfair: "Playfair Display",
+serif;
+$raleway: "Raleway",
+"HelveticaNeue",
+"Helvetica",
+sans-serif;
 
 /* Font sizes */
 $fs-xs: 0.75rem; // 12px
@@ -30,8 +34,7 @@ $fs-base: 1rem; // 16px
 $fs-lg: 1.125rem; // 18px
 $fs-xl: 1.5rem; // 24px
 
-$fs: (
-  xs: 0.75rem,
+$fs: (xs: 0.75rem,
   sm: 0.875rem,
   base: 1rem,
   lg: 1.125rem,
@@ -56,8 +59,7 @@ $fw-extrabold: 800;
 $fw-black: 900;
 
 /* breakpoints */
-$breakpoints: (
-  md: 48rem,
+$breakpoints: (md: 48rem,
   // 768px
   lg: 64rem,
   // 1024px
@@ -67,8 +69,7 @@ $breakpoints: (
 
 /* spacing */
 
-$spacing: (
-  none: 0rem,
+$spacing: (none: 0rem,
   xxxs: 0.25rem,
   // 4px
   xxs: 0.5rem,
@@ -89,6 +90,8 @@ $spacing: (
   // 96px
 ) !default;
 
-$shadows: (
-  base: 0 4px 11px rgba(157, 157, 157, 0.21),
+$shadows: (base: 0 4px 11px rgba(157, 157, 157, 0.21),
+);
+
+$border-radius: (base: 0.25rem,
 );

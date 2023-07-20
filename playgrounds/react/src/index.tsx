@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Margin, Select } from '@or.ds.e/react';
+import { Margin, Select, Input } from '@or.ds.e/react';
+
 import '@or.ds.e/scss/lib/Utilities.css';
 import '@or.ds.e/scss/lib/Text.css';
 import '@or.ds.e/scss/lib/Margin.css';
 import '@or.ds.e/scss/lib/global.css';
 import '@or.ds.e/scss/lib/Select';
+import '@or.ds.e/scss/lib/Input';
 
 const options = [
   { label: 'Option 1', value: 'option1' },
@@ -16,7 +18,7 @@ const options = [
 
 ReactDOM.render(
   <Margin space="xxxl">
-    <Select options={options} />
+    <Input icon="caret" />
   </Margin>,
   document.getElementById('root'),
 );

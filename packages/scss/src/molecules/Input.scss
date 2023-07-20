@@ -1,0 +1,32 @@
+@import "foundation/index";
+
+
+.dse-input-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    @include padding('xs');
+    border: 1px solid $form-border-color;
+    background-color: $form-bg-color;
+    border-radius: map-get($border-radius, "base");
+    box-sizing: border-box;
+    gap: map-get($spacing, 'xs');
+    cursor: text;
+
+
+    &:focus-within {
+        box-shadow: map-get($shadows, 'base');
+        box-sizing: border-box;
+
+    }
+
+    input {
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+        font-family: $body-font-family;
+        font-size: $body-font-size;
+        padding: 0;
+        flex-grow: 1;
+    }
+}
