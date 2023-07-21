@@ -6,7 +6,7 @@ exports[`Snapshot primary 1`] = `
     class=" dse-button dse-button--primary"
   >
     <p
-      class="dse-text dse-text-base"
+      class="dse-text dse-text-base "
     >
       Button
     </p>
@@ -21,7 +21,7 @@ exports[`Snapshot with icon 1`] = `
   >
     <svg
       aria-hidden="true"
-      class=" dse-width-sm dse-height-sm"
+      class="dse-button__icon dse-width-sm dse-height-sm"
       data-testid="DseIcon"
       fill="none"
       stroke="currentColor"
@@ -36,7 +36,7 @@ exports[`Snapshot with icon 1`] = `
       />
     </svg>
     <p
-      class="dse-text dse-text-base"
+      class="dse-text dse-text-base "
     >
       Button
     </p>

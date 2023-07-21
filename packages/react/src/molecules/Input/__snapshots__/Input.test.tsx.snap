@@ -19,7 +19,7 @@ exports[`snapshot input with icon 1`] = `
   >
     <svg
       aria-hidden="true"
-      class=" dse-width-sm dse-height-sm"
+      class="dse-input-container__icon dse-width-sm dse-height-sm"
       data-testid="DseIcon"
       fill="none"
       stroke="currentColor"

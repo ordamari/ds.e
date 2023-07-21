@@ -6,7 +6,6 @@
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "dev": "yarn build --watch",
-    "test": "jest --verbose ",
     "test:watch": "yarn test --watch"
   },
   "devDependencies": {
