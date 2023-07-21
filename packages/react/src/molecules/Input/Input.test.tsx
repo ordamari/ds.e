@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from './Input';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 test('renders input', () => {
   const { getByTestId } = render(<Input />);

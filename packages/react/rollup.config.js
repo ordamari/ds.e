@@ -15,5 +15,11 @@ export default {
     preserveModules: true,
   },
   plugins: [Ts()],
-  external: ['react', 'react-dom', '@or.ds.e/foundation'],
+  external: [
+    'react',
+    'react-dom',
+    '@or.ds.e/foundation',
+    '@or.ds.e/helpers',
+    '@or.ds.e/hooks',
+  ],
 };

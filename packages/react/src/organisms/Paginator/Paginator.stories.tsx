@@ -12,6 +12,7 @@ export const Common = () => (
     selectedPage={number('selectedPage', 0, {
       range: true,
       min: 0,
+      max: 9,
     })}
     pages={10}
   />
