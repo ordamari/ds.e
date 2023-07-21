@@ -1,6 +1,6 @@
 {
   "name": "@or.ds.e/hooks",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
