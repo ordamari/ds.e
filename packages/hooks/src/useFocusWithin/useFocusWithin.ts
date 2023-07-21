@@ -5,7 +5,7 @@ const useFocusWithin = (ref: React.RefObject<HTMLElement>) => {
 
   useEffect(() => {
     if (
-      ref.current &&
+      ref?.current &&
       (ref.current.contains(document.activeElement) ||
         ref.current === document.activeElement)
     ) {

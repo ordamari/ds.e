@@ -4,6 +4,7 @@
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
+    "test": "jest --verbose ",
     "build": "rollup -c --bundleConfigAsCjs",
     "dev": "yarn build --watch",
     "test:watch": "yarn test --watch"
