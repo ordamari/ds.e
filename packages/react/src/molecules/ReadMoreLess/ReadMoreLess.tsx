@@ -15,6 +15,8 @@ export type ReadMoreLessProps = {
   className?: string;
   min?: number;
   size?: keyof typeof FontSize;
+  readMoreText?: string;
+  readLessText?: string;
 };
 
 function ReadMoreLess({
@@ -22,6 +24,8 @@ function ReadMoreLess({
   max,
   min = 0,
   className: customClassName = '',
+  readMoreText = 'read more',
+  readLessText = 'read less',
   size,
   sideEffect,
 }: ReadMoreLessProps) {
@@ -46,21 +50,23 @@ function ReadMoreLess({
   if (!isNeeded)
     return (
       <Text size={size} className={className}>
-        {children}
+        <span data-testid="DseReadMoreLess__span">{children}</span>
       </Text>
     );
 
   return (
     <Text size={size} className={className}>
-      {isShowFullText ? children : shortText}
-      <button onClick={handleToggleIsShowFullText.bind(null, !isShowFullText)}>
+      <span data-testid="DseReadMoreLess__span">
+        {isShowFullText ? children : shortText}
+      </span>
+      <button
+        className={`dse-read-more-less__button`}
+        onClick={() => {
+          handleToggleIsShowFullText(!isShowFullText);
+        }}
+      >
         {isShowFullText ? ' ' : '... '}
-        {/* <span
-          className={`${classes.highlight} ${highlightClassName}`}
-          style={highlightStyle}
-        >
-          {t(`general.${isShowFullText ? 'read-less' : 'read-more'}`)}
-        </span> */}
+        <span>{isShowFullText ? readLessText : readMoreText}</span>
       </button>
     </Text>
   );

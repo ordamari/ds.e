@@ -13,6 +13,7 @@ exports[`snapshot of the base state 1`] = `
     >
       <p
         class="dse-text dse-text-base "
+        data-testid="DseText"
       >
         Please select an option...
       </p>
@@ -46,6 +47,7 @@ exports[`snapshot of the base state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 1
         </p>
@@ -58,6 +60,7 @@ exports[`snapshot of the base state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 2
         </p>
@@ -70,6 +73,7 @@ exports[`snapshot of the base state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 3
         </p>
@@ -93,6 +97,7 @@ exports[`snapshot of the options menu open state 1`] = `
     >
       <p
         class="dse-text dse-text-base "
+        data-testid="DseText"
       >
         Please select an option...
       </p>
@@ -126,6 +131,7 @@ exports[`snapshot of the options menu open state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 1
         </p>
@@ -138,6 +144,7 @@ exports[`snapshot of the options menu open state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 2
         </p>
@@ -150,6 +157,7 @@ exports[`snapshot of the options menu open state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 3
         </p>
@@ -172,6 +180,7 @@ exports[`snapshot of the selected option state 1`] = `
     >
       <p
         class="dse-text dse-text-base "
+        data-testid="DseText"
       >
         Option 1
       </p>
@@ -205,6 +214,7 @@ exports[`snapshot of the selected option state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 1
         </p>
@@ -233,6 +243,7 @@ exports[`snapshot of the selected option state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 2
         </p>
@@ -245,6 +256,7 @@ exports[`snapshot of the selected option state 1`] = `
       >
         <p
           class="dse-text dse-text-base "
+          data-testid="DseText"
         >
           Option 3
         </p>

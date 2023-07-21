@@ -1,0 +1,12 @@
+@import "foundation/index";
+
+.dse-read-more-less {
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        font-size: inherit;
+        color: $btn-info-bg;
+        cursor: pointer;
+    }
+}

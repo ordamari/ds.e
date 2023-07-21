@@ -13,8 +13,6 @@ const Icon: React.FC<IconProps> = ({
   className: customClassName = '',
 }) => {
   const className = `${customClassName} dse-width-${size} dse-height-${size}`;
-  console.log({ className });
-
   switch (icon) {
     case 'caret':
       return (

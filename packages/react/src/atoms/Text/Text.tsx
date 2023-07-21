@@ -13,7 +13,11 @@ const Text: React.FC<TextProps> = ({
   className: customClassName = '',
 }: TextProps) => {
   const className = `dse-text dse-text-${size} ${customClassName}`;
-  return <p className={className}>{children}</p>;
+  return (
+    <p data-testid="DseText" className={className}>
+      {children}
+    </p>
+  );
 };
 
 export default Text;

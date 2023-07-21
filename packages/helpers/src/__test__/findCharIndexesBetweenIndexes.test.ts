@@ -40,6 +40,5 @@ it('find char indexes between indexes with no end index', () => {
     startIndex,
     undefined,
   );
-  console.log(actual);
   expect(actual).toEqual(expected);
 });
