@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import Table from './Table';
 import '@or.ds.e/scss/lib/Table.css';
 
@@ -62,6 +62,24 @@ const users: User[] = [
   { id: 50, firstName: 'Kenneth', lastName: 'Stewart', grade: 94 },
 ];
 
+const TestRelativePaginator = () => {
+  const [page, setPage] = useState(0);
+  const pageUsers = useMemo(
+    () => users.slice(page * 10, (page + 1) * 10),
+    [page],
+  );
+  return (
+    <Table<User>
+      data={pageUsers}
+      relativePaginatorOptions={{
+        pages: 5,
+        page,
+        handlePageChange: setPage,
+      }}
+    />
+  );
+};
+
 export default {
   title: 'Organisms/Table',
 };
@@ -114,13 +132,4 @@ export const staticPaginator = () => (
   />
 );
 
-export const relativePaginator = () => (
-  <Table<User>
-    data={users.slice(30, 40)}
-    relativePaginatorOptions={{
-      pages: 5,
-      page: 3,
-      handlePageChange: (page) => console.log(page),
-    }}
-  />
-);
+export const relativePaginator = () => <TestRelativePaginator />;
