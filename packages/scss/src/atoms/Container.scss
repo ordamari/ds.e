@@ -1,0 +1,74 @@
+@import "foundation/index";
+
+.dse-container {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: map-get($shadows, base);
+    border-radius: map-get($border-radius, base);
+    @include padding('xs');
+
+    &.dse-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &.dse-flex {
+        display: flex;
+
+        &.dse-row:not(.dse-center) {
+            flex-direction: row;
+        }
+
+        &.dse-column:not(.dse-center) {
+            flex-direction: column;
+        }
+
+        @each $space,
+        $value in $spacing {
+            &.dse-gap-#{$space} {
+                gap: $value;
+            }
+        }
+
+        @each $key,
+        $value in $align {
+            &:not(.dse-center).dse-align-#{$key} {
+                align-items: $value;
+            }
+        }
+
+        @each $key,
+        $value in $justify {
+            &:not(.dse-center).dse-justify-#{$key} {
+                justify-content: $value;
+            }
+        }
+
+
+
+    }
+
+    &.dse-none {
+        background-color: $form-bg-color;
+    }
+
+    &.dse-primary {
+        background-color: $btn-primary-bg-hover;
+    }
+
+    &.dse-secondary {
+        background-color: $btn-secondary-bg;
+    }
+
+    &.dse-danger {
+        background-color: $btn-danger-bg-hover;
+    }
+
+    &.dse-info {
+        background-color: $btn-info-bg-hover;
+    }
+
+
+}

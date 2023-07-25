@@ -1,0 +1,31 @@
+@import "foundation/index";
+
+.dse-loader {
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+
+
+
+}
+
+@each $size,
+$value in $spacing {
+    .dse-thickness-#{$size} {
+        border: $value solid $btn-primary-bg;
+        border-bottom-color: transparent;
+
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

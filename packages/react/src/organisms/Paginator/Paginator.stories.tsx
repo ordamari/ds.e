@@ -14,6 +14,10 @@ export const Common = () => (
       min: 0,
       max: 9,
     })}
-    pages={10}
+    pages={number('num of pages', 0, {
+      range: true,
+      min: 10,
+      max: 100,
+    })}
   />
 );

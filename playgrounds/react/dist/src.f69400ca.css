@@ -990,5 +990,33 @@ template {
   flex-grow: 1;
 }
 
+/* Brand Colors */
+/* Neutral Colors */
+/* Utility colors */
+/* Font families */
+/* Font sizes */
+/* Heading font sizes */
+/* Font weights */
+/* breakpoints */
+/* spacing */
+/* Texts */
+/* Buttons */
+/* Forms */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+/* Font Family */
+/* Font Sizes */
+/* Headings */
+.dse-loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid red;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
 
 /*# sourceMappingURL=/src.f69400ca.css.map */

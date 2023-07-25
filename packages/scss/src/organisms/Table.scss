@@ -1,0 +1,105 @@
+@import "foundation/index";
+
+.dse-table__container {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: $body-font-family;
+
+
+    .dse-table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: none;
+        display: table;
+
+        tr {
+
+            td:first-child,
+            th:first-child {
+                border-start-start-radius: map-get($border-radius, 'base');
+                border-end-start-radius: map-get($border-radius, 'base');
+            }
+
+            td:last-child,
+            th:last-child {
+                border-start-end-radius: map-get($border-radius, 'base');
+                border-end-end-radius: map-get($border-radius, 'base');
+            }
+        }
+
+        tr:nth-child(2n) {
+            td {
+                background-color: $table-even-row-bg;
+            }
+        }
+
+        tr:nth-child(2n+1) {
+            td {
+                background-color: $table-odd-row-bg;
+            }
+        }
+
+        thead {
+
+            color: $btn-primary-color;
+
+            th {
+                text-align: start;
+                background-color: $btn-primary-bg;
+
+
+                .dse-table__th-inner {
+                    display: flex;
+                    font-size: map-get($fs, 'base');
+                    padding: map-get($spacing, 'xxs');
+
+                    .dse-table__sort-container {
+                        display: inline-flex;
+                        flex-direction: column;
+                        padding-inline-start: map-get($spacing, 'xs');
+                        align-items: center;
+
+                        button {
+                            font-size: 0.5em;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                            transition: .2s ease;
+
+                            svg {
+                                color: $btn-primary-color;
+
+                            }
+
+                            &.dse-table__sort-container--selected {
+                                transform-origin: center center;
+                                scale: 1.5;
+                            }
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    padding: map-get($spacing, 'xxs');
+                    display: table-cell;
+                }
+            }
+        }
+    }
+
+    .dse-table__paginator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: map-get($spacing, 'xs');
+    }
+
+
+}

@@ -25,3 +25,6 @@ $form-bg: var(--dse-form-bg, $white) !default;
 $form-error-color: var(--dse-form-error-color, $red) !default;
 $form-error-border: var(--dse-form-error-border, $red) !default;
 $form-border-focus-color: var(--dse-form-border-focus-color, $teal) !default;
+
+$table-odd-row-bg: var(--dse-table-even-row-bg, $white) !default;
+$table-even-row-bg: var(--dse-table-odd-row-bg, $white-dark) !default;

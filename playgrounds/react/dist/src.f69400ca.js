@@ -28909,7 +28909,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 const Icons = {
   check: 'check',
-  caret: 'caret'
+  caret: 'caret',
+  ascending: 'ascending',
+  descending: 'descending'
 };
 var _default = Object.freeze(Icons);
 exports.default = _default;
@@ -28963,32 +28965,7 @@ var _Spacing = _interopRequireDefault(require("./Spacing"));
 var _Icon = _interopRequireDefault(require("./Icon"));
 var _Variant = _interopRequireDefault(require("./Variant"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./FontSize":"../../../node_modules/@or.ds.e/foundation/lib/FontSize.js","./Spacing":"../../../node_modules/@or.ds.e/foundation/lib/Spacing.js","./Icon":"../../../node_modules/@or.ds.e/foundation/lib/Icon.js","./Variant":"../../../node_modules/@or.ds.e/foundation/lib/Variant.js"}],"../../../node_modules/@or.ds.e/react/lib/atoms/Color/Color.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _foundation = require("@or.ds.e/foundation");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const Color = ({
-  hexCode,
-  height = _foundation.Spacing.sm,
-  width = _foundation.Spacing.sm
-}) => {
-  const className = `dse-width-${width} dse-height-${height}`;
-  const style = {
-    backgroundColor: hexCode
-  };
-  return _react.default.createElement("div", {
-    className: className,
-    style: style
-  });
-};
-exports.default = Color;
-},{"react":"../../../node_modules/react/index.js","@or.ds.e/foundation":"../../../node_modules/@or.ds.e/foundation/lib/index.js"}],"../../../node_modules/@or.ds.e/react/lib/atoms/Text/Text.js":[function(require,module,exports) {
+},{"./FontSize":"../../../node_modules/@or.ds.e/foundation/lib/FontSize.js","./Spacing":"../../../node_modules/@or.ds.e/foundation/lib/Spacing.js","./Icon":"../../../node_modules/@or.ds.e/foundation/lib/Icon.js","./Variant":"../../../node_modules/@or.ds.e/foundation/lib/Variant.js"}],"../../../node_modules/@or.ds.e/react/lib/atoms/Text/Text.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29000,10 +28977,12 @@ var _foundation = require("@or.ds.e/foundation");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const Text = ({
   children,
-  size = _foundation.FontSize.base
+  size = _foundation.FontSize.base,
+  className: customClassName = ''
 }) => {
-  const className = `dse-text dse-text-${size}`;
+  const className = `dse-text dse-text-${size} ${customClassName}`;
   return _react.default.createElement("p", {
+    "data-testid": "DseText",
     className: className
   }, children);
 };
@@ -29054,11 +29033,9 @@ const Icon = ({
   className: customClassName = ''
 }) => {
   const className = `${customClassName} dse-width-${size} dse-height-${size}`;
-  console.log({
-    className
-  });
   switch (icon) {
     case 'caret':
+    case 'descending':
       return _react.default.createElement("svg", {
         fill: "none",
         className: className,
@@ -29072,6 +29049,18 @@ const Icon = ({
         strokeLinecap: "round",
         strokeLinejoin: "round",
         d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
+      }));
+    case 'ascending':
+      return _react.default.createElement("svg", {
+        className: className,
+        fill: "currentColor",
+        viewBox: "0 0 24 24",
+        xmlns: "http://www.w3.org/2000/svg",
+        "aria-hidden": "true"
+      }, _react.default.createElement("path", {
+        clipRule: "evenodd",
+        fillRule: "evenodd",
+        d: "M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z"
       }));
     case 'check':
       return _react.default.createElement("svg", {
@@ -29093,7 +29082,21 @@ const Icon = ({
   }
 };
 exports.default = Icon;
-},{"react":"../../../node_modules/react/index.js","@or.ds.e/foundation":"../../../node_modules/@or.ds.e/foundation/lib/index.js"}],"../../../node_modules/@or.ds.e/react/lib/molecules/Select/Select.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","@or.ds.e/foundation":"../../../node_modules/@or.ds.e/foundation/lib/index.js"}],"../../../node_modules/@or.ds.e/react/lib/atoms/Loader/Loader.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Loader;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function Loader() {
+  return _react.default.createElement("span", {
+    className: "dse-loader"
+  });
+}
+},{"react":"../../../node_modules/react/index.js"}],"../../../node_modules/@or.ds.e/react/lib/molecules/Select/Select.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29284,6 +29287,7 @@ const Button = ({
     className: className,
     ...props
   }, icon ? _react.default.createElement(_Icon.default, {
+    className: "dse-button__icon",
     icon: icon
   }) : null, _react.default.createElement(_Text.default, {
     size: size
@@ -29313,9 +29317,6 @@ const Input = ({
   const onContainerClick = () => {
     const container = customContainerRef || containerRef;
     const target = container.current;
-    console.log({
-      target
-    });
     if (!target) return;
     [...target.children].forEach(child => {
       if (child.tagName === 'INPUT') {
@@ -29328,51 +29329,15 @@ const Input = ({
     onClick: onContainerClick,
     className: containerClassName
   }, icon && _react.default.createElement(_Icon.default, {
+    className: "dse-input-container__icon",
     icon: icon
   }), _react.default.createElement("input", {
+    "data-testid": "DseInput",
     ...props
   }));
 };
 exports.default = Input;
-},{"react":"../../../node_modules/react/index.js","../../atoms/Icon/Icon.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Icon/Icon.js"}],"../../../node_modules/@or.ds.e/react/lib/hooks/useToggle/useToggle.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = require("react");
-const useToggle = (initialValue = false) => {
-  const [isToggled, setIsToggled] = (0, _react.useState)(initialValue);
-  const toggle = (0, _react.useCallback)(value => {
-    if (typeof value === 'boolean') setIsToggled(value);else setIsToggled(isToggled => !isToggled);
-  }, []);
-  return [isToggled, toggle];
-};
-exports.default = useToggle;
-},{"react":"../../../node_modules/react/index.js"}],"../../../node_modules/@or.ds.e/react/lib/hooks/useFocusWithin/useFocusWithin.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = require("react");
-var _useToggle = _interopRequireDefault(require("../useToggle/useToggle.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const useFocusWithin = ref => {
-  const [isFocusWithin, toggleIsFocusWithin] = (0, _useToggle.default)();
-  (0, _react.useEffect)(() => {
-    if (ref.current && (ref.current.contains(document.activeElement) || ref.current === document.activeElement)) {
-      toggleIsFocusWithin(true);
-    } else {
-      toggleIsFocusWithin(false);
-    }
-  }, [document.activeElement]);
-  return isFocusWithin;
-};
-exports.default = useFocusWithin;
-},{"react":"../../../node_modules/react/index.js","../useToggle/useToggle.js":"../../../node_modules/@or.ds.e/react/lib/hooks/useToggle/useToggle.js"}],"../../../node_modules/@or.ds.e/react/lib/index.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","../../atoms/Icon/Icon.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Icon/Icon.js"}],"../../../node_modules/@or.ds.e/react/lib/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29382,12 +29347,6 @@ Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function () {
     return _Button.default;
-  }
-});
-Object.defineProperty(exports, "Color", {
-  enumerable: true,
-  get: function () {
-    return _Color.default;
   }
 });
 Object.defineProperty(exports, "Icon", {
@@ -29400,6 +29359,12 @@ Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function () {
     return _Input.default;
+  }
+});
+Object.defineProperty(exports, "Loader", {
+  enumerable: true,
+  get: function () {
+    return _Loader.default;
   }
 });
 Object.defineProperty(exports, "Margin", {
@@ -29420,29 +29385,15 @@ Object.defineProperty(exports, "Text", {
     return _Text.default;
   }
 });
-Object.defineProperty(exports, "useFocusWithin", {
-  enumerable: true,
-  get: function () {
-    return _useFocusWithin.default;
-  }
-});
-Object.defineProperty(exports, "useToggle", {
-  enumerable: true,
-  get: function () {
-    return _useToggle.default;
-  }
-});
-var _Color = _interopRequireDefault(require("./atoms/Color/Color.js"));
 var _Text = _interopRequireDefault(require("./atoms/Text/Text.js"));
 var _Margin = _interopRequireDefault(require("./atoms/Margin/Margin.js"));
 var _Icon = _interopRequireDefault(require("./atoms/Icon/Icon.js"));
+var _Loader = _interopRequireDefault(require("./atoms/Loader/Loader.js"));
 var _Select = _interopRequireDefault(require("./molecules/Select/Select.js"));
 var _Button = _interopRequireDefault(require("./molecules/Button/Button.js"));
 var _Input = _interopRequireDefault(require("./molecules/Input/Input.js"));
-var _useToggle = _interopRequireDefault(require("./hooks/useToggle/useToggle.js"));
-var _useFocusWithin = _interopRequireDefault(require("./hooks/useFocusWithin/useFocusWithin.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./atoms/Color/Color.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Color/Color.js","./atoms/Text/Text.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Text/Text.js","./atoms/Margin/Margin.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Margin/Margin.js","./atoms/Icon/Icon.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Icon/Icon.js","./molecules/Select/Select.js":"../../../node_modules/@or.ds.e/react/lib/molecules/Select/Select.js","./molecules/Button/Button.js":"../../../node_modules/@or.ds.e/react/lib/molecules/Button/Button.js","./molecules/Input/Input.js":"../../../node_modules/@or.ds.e/react/lib/molecules/Input/Input.js","./hooks/useToggle/useToggle.js":"../../../node_modules/@or.ds.e/react/lib/hooks/useToggle/useToggle.js","./hooks/useFocusWithin/useFocusWithin.js":"../../../node_modules/@or.ds.e/react/lib/hooks/useFocusWithin/useFocusWithin.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./atoms/Text/Text.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Text/Text.js","./atoms/Margin/Margin.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Margin/Margin.js","./atoms/Icon/Icon.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Icon/Icon.js","./atoms/Loader/Loader.js":"../../../node_modules/@or.ds.e/react/lib/atoms/Loader/Loader.js","./molecules/Select/Select.js":"../../../node_modules/@or.ds.e/react/lib/molecules/Select/Select.js","./molecules/Button/Button.js":"../../../node_modules/@or.ds.e/react/lib/molecules/Button/Button.js","./molecules/Input/Input.js":"../../../node_modules/@or.ds.e/react/lib/molecules/Input/Input.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -29529,6 +29480,12 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
+},{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../node_modules/@or.ds.e/scss/lib/Loader.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
 },{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
@@ -29541,6 +29498,7 @@ require("@or.ds.e/scss/lib/Margin.css");
 require("@or.ds.e/scss/lib/global.css");
 require("@or.ds.e/scss/lib/Select");
 require("@or.ds.e/scss/lib/Input");
+require("@or.ds.e/scss/lib/Loader.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var options = [{
   label: 'Option 1',
@@ -29556,8 +29514,8 @@ _reactDom.default.render(_react.default.createElement(_react2.Margin, {
   space: "xxxl"
 }, _react.default.createElement(_react2.Input, {
   icon: "caret"
-})), document.getElementById('root'));
-},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@or.ds.e/react":"../../../node_modules/@or.ds.e/react/lib/index.js","@or.ds.e/scss/lib/Utilities.css":"../../../node_modules/@or.ds.e/scss/lib/Utilities.css","@or.ds.e/scss/lib/Text.css":"../../../node_modules/@or.ds.e/scss/lib/Text.css","@or.ds.e/scss/lib/Margin.css":"../../../node_modules/@or.ds.e/scss/lib/Margin.css","@or.ds.e/scss/lib/global.css":"../../../node_modules/@or.ds.e/scss/lib/global.css","@or.ds.e/scss/lib/Select":"../../../node_modules/@or.ds.e/scss/lib/Select.css","@or.ds.e/scss/lib/Input":"../../../node_modules/@or.ds.e/scss/lib/Input.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}), _react.default.createElement(_react2.Loader, null)), document.getElementById('root'));
+},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@or.ds.e/react":"../../../node_modules/@or.ds.e/react/lib/index.js","@or.ds.e/scss/lib/Utilities.css":"../../../node_modules/@or.ds.e/scss/lib/Utilities.css","@or.ds.e/scss/lib/Text.css":"../../../node_modules/@or.ds.e/scss/lib/Text.css","@or.ds.e/scss/lib/Margin.css":"../../../node_modules/@or.ds.e/scss/lib/Margin.css","@or.ds.e/scss/lib/global.css":"../../../node_modules/@or.ds.e/scss/lib/global.css","@or.ds.e/scss/lib/Select":"../../../node_modules/@or.ds.e/scss/lib/Select.css","@or.ds.e/scss/lib/Input":"../../../node_modules/@or.ds.e/scss/lib/Input.css","@or.ds.e/scss/lib/Loader.css":"../../../node_modules/@or.ds.e/scss/lib/Loader.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29582,7 +29540,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62005" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64047" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
