@@ -69,7 +69,7 @@
     }
 
     &__caret {
-        transition: all 250ms ease;
+        transition: all map-get($transition, 'base');
 
         &--open {
             transform: rotate(180deg);

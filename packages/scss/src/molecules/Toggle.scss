@@ -1,0 +1,83 @@
+@import "foundation/index";
+
+.toggle-dse-label {
+
+    input[type=checkbox].toggle-dse {
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+
+
+        &.checkbox {
+            margin: 0;
+            width: 1.4em;
+            height: 1.4em;
+            border: 0.15em solid $form-border-color;
+            border-radius: map-get($border-radius, "base");
+            display: grid;
+            place-content: center;
+
+            &::before {
+                content: "";
+                width: 0.65em;
+                height: 0.65em;
+                clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+                scale: 0;
+                transform-origin: center;
+                transition: all map-get($transition, 'base');
+                box-shadow: inset 1em 1em $btn-primary-bg;
+                /* Windows High Contrast Mode */
+                background-color: CanvasText;
+            }
+
+            &:checked::before {
+                scale: 1;
+                background-color: $btn-primary-color;
+            }
+
+            &:focus {
+                box-shadow: map-get($shadows, 'base');
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                background-color: $form-border-color;
+            }
+        }
+    }
+
+    &:has(.switch) {
+        cursor: pointer;
+        display: block;
+        text-indent: -9999px;
+        width: 3em;
+        height: 1.5em;
+        border-radius: 100px;
+        position: relative;
+        background-color: $form-border-color;
+
+        &:active::after {
+            width: 1.3em;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0.25em;
+            left: 0.25em;
+            width: 1em;
+            height: 1em;
+            background-color: $form-bg-color;
+            border-radius: 100px;
+            transition: map-get($transition, 'base');
+
+        }
+
+        &:has(input:checked)::after {
+            left: calc(100% - 0.25em);
+            transform: translateX(-100%);
+            background-color: $btn-primary-bg;
+        }
+
+    }
+}

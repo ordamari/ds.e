@@ -64,7 +64,7 @@
                             background-color: transparent;
                             border: none;
                             cursor: pointer;
-                            transition: .2s ease;
+                            transition: all map-get($transition, 'base');
 
                             svg {
                                 color: $btn-primary-color;
