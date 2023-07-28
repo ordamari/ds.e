@@ -22,11 +22,24 @@ The Design System provides an array of components documented in the Storybook, s
 Our Helper package offers useful functions such as:
 * callFnsInSequence
 * findCharIndexesBetweenIndexes
+* dateHelpers that include:
+  * startMonth
+  * endMonth
+  * differenceInMs
+  * differenceInDays
+  * prevMonth
+  * nextMonth
+  * nextYear
+  * prevYear
+  * isToday
+  * isSameDate
+  * isInRange
   
 Our Hook package provides practical custom hooks such as:
 * useArray
 * useFocusWithin
 * useToggle
+* useDate
 
 ## Download
 
