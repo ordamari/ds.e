@@ -1,3 +1,4 @@
 import callFnsInSequence from './callFnsInSequence';
 import findCharIndexesBetweenIndexes from './findCharIndexesBetweenIndexes';
-export { callFnsInSequence, findCharIndexesBetweenIndexes };
+import dateHelpers from './dateHelpers';
+export { callFnsInSequence, findCharIndexesBetweenIndexes, dateHelpers };

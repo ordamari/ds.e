@@ -4,7 +4,7 @@ type Item = {
   id: string | number;
 };
 
-type ArrayActions<T extends Item> = {
+export type ArrayActions<T extends Item> = {
   set: React.Dispatch<React.SetStateAction<T[]>>;
   clear: () => void;
   add: (item: T) => T[];
