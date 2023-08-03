@@ -1,0 +1,17 @@
+@import "foundation/index";
+
+.dse-flow-menu {
+    background-color: red;
+    position: absolute;
+
+    &.dse-horizontal-right {
+        right: 0;
+        translate: 100% 0;
+    }
+
+    &.dse-horizontal-left {
+        left: 0;
+        translate: -100% 0;
+    }
+
+}
