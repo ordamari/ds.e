@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React from 'react';
 import Modal from './Modal';
 import Button from '../../molecules/Button/Button';
 import { useToggle } from '@or.ds.e/hooks';
