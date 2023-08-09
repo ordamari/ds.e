@@ -1,0 +1,81 @@
+@import "foundation/index";
+
+@keyframes modal {
+    0% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dse-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &__close {
+        display: none;
+    }
+
+    &__open {
+        .dse-modal {
+            animation-name: modal;
+            animation-duration: 300ms;
+            animation-timing-function: ease;
+        }
+    }
+
+
+    .dse-modal {
+        width: 700px;
+        max-width: calc(100% - 2rem);
+        transform-origin: center;
+        border-radius: map-get($map: $border-radius, $key:'base');
+        background-color: $form-bg;
+
+        .dse-modal-header {
+            background-color: $btn-primary-bg;
+            color: $btn-primary-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-block: map-get($map: $spacing, $key: 'sm');
+            border-top-right-radius: map-get($map: $border-radius, $key:'base');
+            border-top-left-radius: map-get($map: $border-radius, $key:'base');
+
+            button {
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: transparent;
+                color: $btn-primary-color;
+                border: none;
+                cursor: pointer;
+                padding: map-get($map: $spacing, $key: 'xxs');
+            }
+        }
+
+        .dse-modal-body {
+            padding: map-get($map: $spacing, $key: 'sm');
+        }
+
+        .dse-modal-footer {
+            padding: map-get($map: $spacing, $key: 'sm');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
